@@ -11,10 +11,15 @@ const Form = ({ schema }) => {
     const [newDate, setNewDate] = useState(null);
     const [newQuiry, setNewQuiry] = useState('');
 
+    //destructuring all props from passed down schema
+    //done in the form component in order to avoid TypeErrors 
+    //which arise on reload of page 
     const { title, description, properties: { enquiry, date, quiry } } = schema;
 
+    //condition for button to be dissabled
     const isEnabled = newEnquiry.length > 0 && newQuiry.length > 0;
 
+    //function used on submit
     const handleSubmit = (e) => {
         e.preventDefault();
         const body = document.createElement('body');
@@ -31,6 +36,7 @@ const Form = ({ schema }) => {
         setNewDate(null);
         setNewQuiry('');
     }
+
 
     return (
         <div className='form-container'>
