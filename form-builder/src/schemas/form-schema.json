@@ -1,0 +1,30 @@
+{
+  "title": "Payroll Enquiry",
+  "description": "Please use this form for any Payroll related enquiries.",
+  "properties": {
+    "enquiry": {
+      "id": "enquiry",
+      "description": "What does your enquiry relate to ?",
+      "enum": [
+        "Incorect Pay",
+        "Missing Expense",
+        "Change of Bank Details",
+        "Change of Address",
+        "Other"
+      ],
+      "required": true
+    },
+    "date": {
+      "id": "date",
+      "description": "Date of payslip being quired (if applicable)",
+      "format": "date",
+      "required": true,
+      "enum": ["Incorect Pay", "Missing Expense"]
+    },
+    "quiry": {
+      "id": "quiry",
+      "description": "Quiry",
+      "required": true
+    }
+  }
+}

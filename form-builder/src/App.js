@@ -1,8 +1,21 @@
+import { useState, useEffect } from 'react';
+
+import formSchema from './schemas/form-schema.json';
+import Form from './components/Form';
 import './App.css';
 
 function App () {
+  const [schema, setSchema] = useState(null);
+
+  useEffect(() => {
+    setSchema(formSchema);
+  }, []);
+
   return (
-    <h1>Hello World</h1>
+    schema &&
+    <div className='class-app'>
+      <Form schema={schema} />
+    </div>
   );
 }
 
